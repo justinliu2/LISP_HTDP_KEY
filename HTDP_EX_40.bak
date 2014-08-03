@@ -35,10 +35,10 @@
 (check-expect (hyper 21 10 20 "enter") 21)
 (check-expect (hyper 42 10 20 "button-down") 10)
 (check-expect (hyper 42 10 20 "move") 42)
-(define (hyper x-position-of-car x-mouse y-mouse me)
+(define (hyper ws x-mouse y-mouse me)
   (cond
     [(string=? "button-down" me) x-mouse]
-    [else x-position-of-car]))
+    [else ws]))
 (define (main ws)
   (big-bang ws 
             [on-tick tock]
